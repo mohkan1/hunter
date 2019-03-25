@@ -11,7 +11,6 @@
         margin: auto;
         display: flex;
         width: 400px;
-        overflow: hidden;
 
 
 
@@ -22,7 +21,6 @@
       }
 
       main{
-        overflow: hidden;
         height: 315px;
       }
       button{
@@ -42,7 +40,7 @@
       }
 
     </style>
-    <h1>Fade Slider</h1>
+    <h1>Images</h1>
     <div id="wrapper">
 
       <main>
@@ -67,11 +65,13 @@
      $("p").text(number + " av 4");
 
     $(document).ready(function(){
+      $("main").css("overflow", "hidden");
+      $("h1").text("Fade Slider")
       $("#left").click(function(){
 
 
           switch (number) {
-            case 1:
+          /*  case 1:
             number = 4;
             $("#first").hide(1000);
             $("#second").hide(1000);
@@ -81,10 +81,12 @@
             $("p").text(number + " av 4");
 
               break;
-
+*/
             case 4:
             number--;
-            $("#third").show(1000);
+            $("#forth").fadeOut(1000);
+            $("#third").fadeOut(1000);
+            $("#third").fadeIn(1000);
             console.log("bild nummer " + number);
             $("p").text(number + " av 4");
 
@@ -93,7 +95,9 @@
 
             case 3:
             number--;
-            $("#second").show(1000);
+            $("#third").fadeOut(1000);
+            $("#second").fadeOut(1000);
+            $("#second").fadeIn(1000);
             console.log("bild nummer " + number);
             $("p").text(number + " av 4");
 
@@ -101,7 +105,9 @@
 
             case 2:
             number--;
-            $("#first").show(1000);
+            $("#second").fadeOut(1000);
+            $("#first").fadeOut(1000);
+            $("#first").fadeIn(1000);
             console.log("bild nummer " + number);
             $("p").text(number + " av 4");
 
@@ -121,7 +127,9 @@
 
                 switch (number) {
                   case 1:
-                  $("#first").hide(1000);
+                  $("#first").fadeOut(1000);
+                  $("#second").fadeOut(1000);
+                  $("#second").fadeIn(1000);
                   number++;
                   console.log("bild nummer " + number);
                   $("p").text(number + " av 4");
@@ -130,7 +138,9 @@
                     break;
 
                   case 2:
-                  $("#second").hide(1000);
+                  $("#second").fadeOut(1000);
+                  $("#third").fadeOut(1000);
+                  $("#third").fadeIn(1000);
                   number++;
                   console.log("bild nummer " + number);
                   $("p").text(number + " av 4");
@@ -138,25 +148,27 @@
                     break;
 
                   case 3:
-                  $("#third").hide(1000);
+                  $("#third").fadeOut(1000);
+                  $("#forth").fadeOut(1000);
+                  $("#forth").fadeIn(1000);
                   number++;
                   console.log("bild nummer " + number);
                   $("p").text(number + " av 4");
 
                     break;
 
-                  case 4:
+  /*                case 4:
                   number = 1;
-                  $("#forth").hide(1000);
-                  $("#first").show(1000);
-                  $("#second").show(1000);
-                  $("#third").show(1000);
-                  $("#forth").show(1000);
+                  $("#forth").fadeOut(1000);
+                  $("#first").fadeIn(1000);
+                  $("#second").fadeIn(1000);
+                  $("#third").fadeIn(1000);
+                  $("#forth").fadeIn(1000);
                   console.log("bild nummer " + number);
                   $("p").text(number + " av 4");
 
                     break;
-
+*/
 
                     console.log(number);
                   default:
