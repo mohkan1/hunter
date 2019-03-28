@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charsset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <form>
+      <p>First Name: </p>
+      <input type="text" id="first" name="first">
+      <p id="firstAnswer"></p>
+
+      <p>Last Name: </p>
+      <input type="text" name="last">
+
+      <p>Phone number: </p>
+      <input type="text" name="number">
+
+      <p>Gmail: </p>
+      <input type="text" name="gmail">
+
+      <button type="submit" name="submit">Apply</button>
+    </form>
+
+    <script>
+
+    $(document).ready(function() {
+      function testInfo(input,re,textsvar){
+
+
+    		var OK = re.exec(input);
+
+    		if (!OK)
+              $(textsvar).text("fel");
+
+
+    		else
+
+    		$(textsvar).text("ok");
+
+    		}
+
+
+        		$("#number").keyup(function(){
+
+        			var re = /^[0]{1}[0-9]{6,15}$/;
+        			testInfo($('#number').val(),re,"#firstAnswer");
+
+        		});
+
+
+
+
+
+    });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width" />
+      <title>Upload files using the GitHub APIs</title>
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="js/FileSaver"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.3/ace.js"></script>
+      <script src="github-api/github.js"></script>
+
+
+
+
+   </head>
+
+
+   <style media="screen">
+
+
+  #editor {
+      height: 100%;
+      width:50%;
+      display:inline-block;
+  }
+
+  #container {
+    height:100%;
+    width:auto;
+    white-space : nowrap;
+    overflow : hidden;
+    position:relative;
+  }
+
+  #iframe {
+    height:100%;
+    display:inline-block;
+    width:50%;
+  }
+
+  /* disable tag matching */
+  .ace_editor .ace_marker-layer .ace_bracket { display: none }
+</style>
+
+   <body>
+
+
+
+      <h1>Upload files using the GitHub APIs</h1>
+
+      <form action="/" method="POST">
+         <label for="file">Select one or more files:</label>
+         <input name="file" id="file" type="file" multiple />
+         <label for="commit-title">Commit title:</label>
+         <input id="commit-title" name="commit-title" type="text" />
+         <input type="submit" />
+      </form>
+      <button id="save-btn">Save Text file</button>
+      <small class="author">
+         Demo created by <a href="http://www.audero.it">Aurelio De Rosa</a>
+         (<a href="https://twitter.com/AurelioDeRosa">@AurelioDeRosa</a>).
+         This demo is part of
+         <a href="http://www.audero.it/blog/2015/10/16/upload-files-on-github-using-github-js" target="_blank">
+            an article I've written for my blog
+         </a>.
+      </small>
+
+
+
+
+      <script src="dist.js" defer async></script>
+      <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js">
+
+      </script>
+      <script src="js/text.js">
+
+      </script>
+      <script>
+      $("#save-btn").click(function() {
+var blob = new Blob(["test text"], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, "testfile1.txt");
+      alert("file created");
+});
+
+      </script>
+
+
+   </body>
+</html>

@@ -1,0 +1,25 @@
+body{
+background-color: red;
+border-top: 10px solid #2ecc71;
+margin: 0 auto;
+
+
+}
+
+#content{
+
+width: 100%;
+
+}
+
+#header_bild{
+  background-image: url("https://image.freepik.com/free-photo/burger-wrapped-paper-wooden-table-dark-background_77190-233.jpg");
+
+
+  /* Set a specific height */
+  min-height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
